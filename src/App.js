@@ -1,7 +1,7 @@
 // Import React hooks for state management and useEffect for side effects.
 import React, { useState, useEffect } from 'react';
 // Import icons from lucide-react for a clean, modern look.
-import { Github, Linkedin, Mail, Code, Rocket, Award, ArrowLeft } from 'lucide-react';
+import { Github, Linkedin, Mail, Rocket, Award, ArrowLeft } from 'lucide-react';
 
 // The main App component, which acts as the entry point for the application.
 export default function App() {
@@ -38,8 +38,7 @@ export default function App() {
 
   // Helper component for the navigation links.
   const NavLink = ({ to, children }) => (
-    <a
-      href="#" // Using '#' as a placeholder for navigation. The 'onClick' handles the routing.
+    <button
       onClick={() => navigate(to)}
       className={`
         px-4 py-2 text-sm md:text-lg font-medium rounded-full transition-colors duration-300
@@ -50,7 +49,7 @@ export default function App() {
       `}
     >
       {children}
-    </a>
+    </button>
   );
 
   // Helper component to render a single project card.
@@ -218,7 +217,7 @@ export default function App() {
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-4 border border-gray-700 shadow-lg">
             <img
               src={currentCaseStudy.images[0]}
-              alt={`${currentCaseStudy.title} - Main Image`}
+              alt={`${currentCaseStudy.title} - Main Visual`}
               className="w-full h-auto rounded-xl object-cover"
               onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/800x600?text=Image+Not+Found"; }}
             />
