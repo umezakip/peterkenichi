@@ -1,5 +1,5 @@
 // Import React hooks for state management and useEffect for side effects.
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 // Import icons from lucide-react for a clean, modern look.
 import { Github, Linkedin, Mail, Rocket, Award, ArrowLeft } from 'lucide-react';
 
@@ -12,6 +12,18 @@ export default function App() {
   // State to manage which design case study is currently being displayed.
   const [designCaseStudy, setDesignCaseStudy] = useState(null);
 
+  // Use a ref to get access to the video element.
+  const videoRef = useRef(null);
+
+  // This effect runs once after the component mounts to set the video playback speed.
+  useEffect(() => {
+      if (videoRef.current) {
+        // Set the playback rate to 0.5 for half speed.
+        // Adjust this value to your preference.
+        videoRef.current.playbackRate = 0.5;
+      }
+  }, []);
+  
   // Utility function to handle page changes.
   const navigate = (page) => {
     setCurrentPage(page);
@@ -311,6 +323,7 @@ export default function App() {
       {currentPage === 'home' && (
         <>
           <video
+            ref={videoRef}
             autoPlay
             loop
             muted
