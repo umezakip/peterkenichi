@@ -267,7 +267,7 @@ export default function App() {
         </p>
         
         <div className="space-y-8">
-          {['posters', 'sports', 'ads'].includes(caseStudyId) ? (
+          {shouldShowAllImages ? (
             currentCaseStudy.images.map((image, index) => (
               <div key={index} className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-4 border border-gray-700 shadow-lg">
                 <img
