@@ -250,7 +250,8 @@ export default function App() {
     };
 
     const currentCaseStudy = caseStudies[caseStudyId];
-
+    const shouldShowAllImages = ['posters', 'sports', 'ads'].includes(caseStudyId);
+    
     return (
       <div className="p-8 md:p-12 text-left max-w-4xl mx-auto">
         <button
@@ -265,17 +266,31 @@ export default function App() {
           {currentCaseStudy.content}
         </p>
         
-        {/* Only display the first image from the array */}
-        {currentCaseStudy.images.length > 0 && (
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-4 border border-gray-700 shadow-lg">
-            <img
-              src={currentCaseStudy.images[0]}
-              alt={`${currentCaseStudy.title} - Main Visual`}
-              className="w-full h-auto rounded-xl object-cover"
-              onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/800x600?text=Image+Not+Found"; }}
-            />
-          </div>
-        )}
+        <div className="space-y-8">
+          {['posters', 'sports', 'ads'].includes(caseStudyId) ? (
+            currentCaseStudy.images.map((image, index) => (
+              <div key={index} className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-4 border border-gray-700 shadow-lg">
+                <img
+                  src={image}
+                  alt={`${currentCaseStudy.title} - Visual ${index + 1}`}
+                  className="w-full h-auto rounded-xl object-cover"
+                  onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/800x600?text=Image+Not+Found"; }}
+                />
+        </div>
+      ))
+          ) : (
+            currentCaseStudy.images.length > 0 && (
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-4 border border-gray-700 shadow-lg">
+                <img
+                  src={currentCaseStudy.images[0]}
+                  alt={`${currentCaseStudy.title} - Main Visual`}
+                  className="w-full h-auto rounded-xl object-cover"
+                  onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/800x600?text=Image+Not+Found"; }}
+                />
+      </div>
+    )
+  )}
+</div>
       </div>
     );
   };
