@@ -20,7 +20,7 @@ export default function App() {
       if (videoRef.current) {
         // Set the playback rate to 0.5 for half speed.
         // Adjust this value to your preference.
-        videoRef.current.playbackRate = 0.5;
+        videoRef.current.playbackRate = 0.75;
       }
   }, []);
   
