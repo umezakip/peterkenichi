@@ -144,7 +144,7 @@ export default function App() {
       {
         id: 'threadbox',
         title: 'Mobile App UI',
-        description: 'A mobile app wireframe.'
+        description: 'A mobile app wireframe for a weather based outfit generator.'
       },
       {
         id: 'NBPA',
@@ -190,7 +190,7 @@ export default function App() {
         ]
       },
       'threadbox': {
-        title: 'Safety & Marketing: Threadbox',
+        title: 'UI Wireframe: Threadbox',
         content: 'For this project, I designed the user interface for a weather based fashion app. The key challenge was to create an intuitive and visually appealing experience that makes it easy for users to receive output based off their input entry. I used Figma to create wireframes and high-fidelity mockups, focusing on clear navigation, and a consistent design system.',
         images: [
           '/images/threadbox.jpg',
