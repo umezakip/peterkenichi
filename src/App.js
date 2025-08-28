@@ -150,6 +150,21 @@ export default function App() {
         id: 'NBPA',
         title: 'Marketing & Promotional',
         description: 'Promotional items for NBPA events.'
+      },
+      {
+        id: 'posters',
+        title: 'Social Media Posts',
+        description: 'Social media posts for active pop culture accounts and communities.'
+      },
+      {
+        id: 'sports',
+        title: 'Sports Media Graphics',
+        description: 'Graphics used to celebrate athletes and their accomplishments.'
+      },
+      {
+        id: 'ads',
+        title: 'Product Advertising',
+        description: 'Mock advertisements showcasing typography, consumer relatability, and creativity.'
       }
     ];
 
@@ -204,6 +219,32 @@ export default function App() {
           '/images/NBPA.jpg',
           'https://placehold.co/800x600/ed64a6/ffffff?text=Poster+2',
           'https://placehold.co/800x600/f6ad55/ffffff?text=Poster+3'
+        ]
+      },
+      'posters': {
+        title: 'Social Media: Pop Culture Art',
+        content: 'For this project, used Adobe Creative Suite to edit and create these pieces. The goal was to expand following by creating original and eye magnetizing artwork to attract a formerly untapped niche of individuals.',
+        images: [
+          '/images/YACHTY.jpg',
+          '/images/SPIDERMAN.png',
+          '/images/TYLERTHECREATOR.jpg'
+        ]
+      },
+      'sports': {
+        title: 'Media Graphics: Athletes',
+        content: 'Using Adobe Creative Suite I created celebratory media for accomplished athletes. Designs embodied the athlete and their specific tone and aura. This was primarily done using color theory, typography, and texture.',
+        images: [
+          '/images/RICHARDSON.png',
+          '/images/JAMORANT.png'
+        ]
+      },
+      'ads': {
+        title: 'Product Ads (mock): Guarana, Spider-man Movie, Rolex',
+        content: 'This project consisted of creating ads elevated through creativity and relatability. The key challenge was to embody a lifestyle that a consumer relates to. This is visible through components such as the children plating soccer around the soda bottle, a core memory for Brasileros.',
+        images: [
+          '/images/GUARANA.png',
+          '/images/MARCJACOBS.png',
+          '/images/ROLEX.png'
         ]
       }
     };
