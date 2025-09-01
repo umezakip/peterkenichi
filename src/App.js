@@ -305,14 +305,14 @@ export default function App() {
         link: 'https://routedphilanthropy.org/'
       },
       {
+        title: 'Personal Finance Application',
+        description: 'This application is designed to help users manage their personal finances. It includes features for tracking income, expenses, and budgeting, all built with React and integrated with a backend API for data persistence.',
+        link: 'https://pocketwatching.netlify.app/'
+      },
+      {
         title: 'Global Art Platform',
         description: 'This code features a clean, visually-driven layout with high-quality images of modern and contemporary art. It is highly functional, serving as both a promotional tool and an information portal.',
         link: 'https://github.com/umezakip/curated.colors'
-      },
-      {
-        title: 'Coming Soon',
-        description: 'Coming Soon',
-        link: 'https://github.com/your-username/personal-blog'
       }
     ];
     return (
