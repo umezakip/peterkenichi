@@ -116,7 +116,7 @@ export default function App() {
         <p className="text-lg text-gray-300 mb-8 leading-relaxed">
           Peter Umezaki is a quadralingual and passionate front-end developer with expertise in building dynamic and responsive user interfaces. With a strong foundation in HTML, CSS, and JavaScript, I specialize in crafting modern web applications using the React library. I am dedicated to writing clean, maintainable code and solving complex problems to deliver exceptional user experiences.
           <br/><br/>
-          Additionally, I have a proficient background in Graphic Design, focused on Brand ing & Marketing. I am excited to bring my skills to a new team and design/build something amazing.
+          Additionally, I have a proficient background in Graphic Design (6+ years), focused on Branding & Marketing. I am excited to bring my skills to a new team and design/build something amazing.
         </p>
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mt-8">
           <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm rounded-full p-4 border border-gray-700">
@@ -300,17 +300,17 @@ export default function App() {
     // Placeholder data for your projects. You can easily replace this with your own.
     const projects = [
       {
-        title: 'Non-profit Platform',
+        title: 'Routed Philanthropy Website',
         description: 'This non-profit philanthropy website, built with React, showcases skills in database management, user interface design, and content organization.',
         link: 'https://routedphilanthropy.org/'
       },
       {
-        title: 'Personal Finance Application',
+        title: 'Pocket Watching',
         description: 'This application is designed to help users manage their personal finances. It includes features for tracking income, expenses, and budgeting, all built with React and integrated with a backend API for data persistence.',
         link: 'https://pocketwatching.netlify.app/'
       },
       {
-        title: 'Global Art Platform',
+        title: 'Curated Colors',
         description: 'This code features a clean, visually-driven layout with high-quality images of modern and contemporary art. It is highly functional, serving as both a promotional tool and an information portal.',
         link: 'https://github.com/umezakip/curated.colors'
       }
