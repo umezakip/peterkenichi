@@ -116,9 +116,8 @@ export default function App() {
       <div className="p-8 md:p-12 text-center max-w-4xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">About Me</h2>
         <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-          Peter Umezaki is a quadralingual multimedia designer with expertise in designing dynamic graphics that relate to consumers, and responsive user interfaces. With a strong foundation in Adobe Creative Suite, Figma, and other design platforms as well as fundamental knowledge in HTML, CSS, and JavaScript, I am dedicated to creating visually stunning and user-friendly designs. I have a proven track record of delivering high-quality work that meets client needs and exceeds expectations. My passion for design is evident in my attention to detail, creativity, and commitment to excellence.
-          <br/><br/>
-          I have a proficient background in Graphic Design (6+ years), focused on Branding & Marketing. I am excited to bring my skills to a new team and design/build something amazing.
+          I’m Peter Umezaki, a quadralingual multimedia designer passionate about creating dynamic, consumer-focused graphics and intuitive user interfaces. My expertise spans Adobe Creative Suite, Figma, and a range of design platforms, complemented by strong fundamentals in HTML, CSS, and JavaScript. I’m dedicated to delivering visually stunning, user-friendly designs that exceed client expectations—driven by a sharp eye for detail, creativity, and a commitment to excellence.<br/><br/>
+          With 6+ years of experience in Graphic Design, especially Branding & Marketing, I’m excited to bring my skills and energy to a new team to design and build something amazing.
         </p>
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mt-8">
           <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm rounded-full p-4 border border-[#00CFFF]">
