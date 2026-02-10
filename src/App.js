@@ -68,7 +68,7 @@ export default function App() {
 
   // Helper component to render a single project card.
   const ProjectCard = ({ title, description, link }) => (
-    <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-6 border border-[#00CFFF] shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:bg-[#00CFFF]/10">
+    <div className="bg-gray-800/30 backdrop-blur-sm rounded-3xl p-6 border border-[#00CFFF] shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:bg-[#00CFFF]/10">
       <h3 className="text-xl font-bold mb-2 text-white">{title}</h3>
       <p className="text-gray-400 text-sm md:text-base mb-4">{description}</p>
       <a 
@@ -85,7 +85,7 @@ export default function App() {
   // Helper component for the "About Me" page content.
   const HomePage = () => (
     <div className="text-center p-8 md:p-12 relative z-20 flex items-center justify-center min-h-[60vh]">
-      <div className="mx-auto max-w-2xl bg-gray-900/70 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl border border-[#00CFFF]/30">
+      <div className="mx-auto max-w-4xl bg-gray-900/40 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl border border-[#00CFFF]/30">
         <h1 className="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight text-white">
           Hello, I'm Peter Umezaki
         </h1>
@@ -120,11 +120,11 @@ export default function App() {
           With 6+ years of experience in Graphic Design, especially Branding & Marketing, I’m excited to bring my skills and energy to a new team to design and build something amazing.
         </p>
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mt-8">
-          <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm rounded-full p-4 border border-[#00CFFF]">
+          <div className="flex items-center space-x-2 bg-gray-800/20 backdrop-blur-sm rounded-full p-4 border border-[#00CFFF]">
             <Rocket size={24} className="text-[#00CFFF]" />
             <span className="text-gray-300 text-sm">Passionate about creating meaningful visual experiences</span>
           </div>
-          <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm rounded-full p-4 border border-[#00CFFF]">
+          <div className="flex items-center space-x-2 bg-gray-800/20 backdrop-blur-sm rounded-full p-4 border border-[#00CFFF]">
             <Award size={24} className="text-[#FFD700]" />
             <span className="text-gray-300 text-sm">Committed to excellence and innovative creativity</span>
           </div>
@@ -209,7 +209,7 @@ export default function App() {
             <div
               key={project.id}
               onClick={() => setDesignCaseStudy(project.id)}
-              className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-6 border border-[#00CFFF] shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:bg-[#00CFFF]/10 cursor-pointer"
+              className="bg-gray-800/30 backdrop-blur-sm rounded-3xl p-6 border border-[#00CFFF] shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:bg-[#00CFFF]/10 cursor-pointer"
             >
               <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>
               <p className="text-gray-400 text-sm md:text-base mb-4">{project.description}</p>
@@ -327,7 +327,7 @@ export default function App() {
         </p>
         <div className="space-y-8">
           {currentCaseStudy.images && currentCaseStudy.images.length > 0 && currentCaseStudy.images.map((image, index) => (
-            <div key={index} className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-4 border border-gray-700 shadow-lg">
+            <div key={index} className="bg-gray-800/20 backdrop-blur-sm rounded-2xl p-4 border border-gray-700 shadow-lg">
               <img
                 src={image}
                 alt={`${currentCaseStudy.title} - Visual ${index + 1}`}
@@ -385,13 +385,13 @@ export default function App() {
       </p>
       {/* Updated contact icons with new styling */}
       <div className="flex justify-center space-x-6">
-        <a href="mailto:peterumezaki@gmail.com" className="flex items-center justify-center p-4 bg-gray-800/50 backdrop-blur-sm rounded-full border border-gray-700 text-white transition-all duration-300 transform hover:scale-110 hover:bg-white/10">
+        <a href="mailto:peterumezaki@gmail.com" className="flex items-center justify-center p-4 bg-gray-800/20 backdrop-blur-sm rounded-full border border-gray-700 text-white transition-all duration-300 transform hover:scale-110 hover:bg-white/10">
           <Mail size={32} />
         </a>
-        <a href="https://www.linkedin.com/in/peter-umezaki-504bb5192/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center p-4 bg-gray-800/50 backdrop-blur-sm rounded-full border border-gray-700 text-white transition-all duration-300 transform hover:scale-110 hover:bg-white/10">
+        <a href="https://www.linkedin.com/in/peter-umezaki-504bb5192/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center p-4 bg-gray-800/20 backdrop-blur-sm rounded-full border border-gray-700 text-white transition-all duration-300 transform hover:scale-110 hover:bg-white/10">
           <Linkedin size={32} />
         </a>
-        <a href="https://github.com/umezakip" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center p-4 bg-gray-800/50 backdrop-blur-sm rounded-full border border-gray-700 text-white transition-all duration-300 transform hover:scale-110 hover:bg-white/10">
+        <a href="https://github.com/umezakip" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center p-4 bg-gray-800/20 backdrop-blur-sm rounded-full border border-gray-700 text-white transition-all duration-300 transform hover:scale-110 hover:bg-white/10">
           <Github size={32} />
         </a>
       </div>
