@@ -12,6 +12,9 @@ export default function App() {
   // State to manage which design case study is currently being displayed.
   const [designCaseStudy, setDesignCaseStudy] = useState(null);
 
+  // State to manage which design category is currently selected.
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
   // Use a ref to get access to the video element.
   const videoRef = useRef(null);
 
@@ -27,12 +30,19 @@ export default function App() {
   // Utility function to handle page changes.
   const navigate = (page) => {
     setCurrentPage(page);
-    // When navigating away from the design page, reset the case study state.
+    // When navigating away from the design page, reset the case study and category state.
     if (page !== 'design') {
       setDesignCaseStudy(null);
+      setSelectedCategory(null);
     }
     // Optional: Scroll to the top of the page when navigating.
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Utility function to navigate to a design category.
+  const navigateToCategory = (categoryId) => {
+    setSelectedCategory(categoryId);
+    setDesignCaseStudy(null);
   };
 
   // Utility function to navigate to a specific design case study.
@@ -132,39 +142,44 @@ export default function App() {
     );
   };
 
-  // New "Design" page component.
+  // New "Design" page component - shows design categories.
   const DesignPage = () => {
-    // Placeholder data for your design projects.
-    const designProjects = [
+    // Design categories data.
+    const designCategories = [
       {
-        id: 'OBP',
+        id: 'branding',
         title: 'Branding & Marketing',
-        description: 'Complete designs for a newly established premium steakhouse.'
+        description: 'Complete branding and marketing designs for businesses.'
       },
       {
-        id: 'threadbox',
+        id: 'mobile',
         title: 'Mobile App UI',
-        description: 'A mobile app wireframe for a weather based outfit generator.'
+        description: 'Mobile app wireframes and user interface designs.'
       },
       {
-        id: 'NBPA',
+        id: 'promotional',
         title: 'Marketing & Promotional',
-        description: 'Promotional items for NBPA events.'
+        description: 'Promotional items for events and organizations.'
       },
       {
-        id: 'posters',
+        id: 'social',
         title: 'Social Media Posts',
-        description: 'Social media posts for active pop culture accounts and communities.'
+        description: 'Social media posts for pop culture accounts and communities.'
       },
       {
         id: 'sports',
         title: 'Sports Media Graphics',
-        description: 'Graphics used to celebrate athletes and their accomplishments.'
+        description: 'Graphics celebrating athletes and their accomplishments.'
       },
       {
         id: 'ads',
         title: 'Product Advertising',
-        description: 'Mock advertisements showcasing typography, consumer relatability, and creativity.'
+        description: 'Mock advertisements showcasing creativity and relatability.'
+      },
+      {
+        id: 'logos',
+        title: 'Logo Work',
+        description: 'Logo designs showcasing creativity and brand identity.'
       }
     ];
 
@@ -175,10 +190,107 @@ export default function App() {
           Proficient in Figma, Adobe: Photoshop, Illustrator, InDesign, Premier Pro
         </p>
         <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+          Click on a category to explore projects!
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {designCategories.map(category => (
+            <div 
+              key={category.id}
+              onClick={() => navigateToCategory(category.id)}
+              className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-6 border border-gray-700 shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:bg-gray-800 cursor-pointer"
+            >
+              <h3 className="text-xl font-bold mb-2 text-white">{category.title}</h3>
+              <p className="text-gray-400 text-sm md:text-base mb-4">{category.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
+  // Component to show projects within a selected category.
+  const CategoryProjectsPage = ({ categoryId }) => {
+    // Projects organized by category.
+    const categoryProjects = {
+      'branding': [
+        {
+          id: 'OBP',
+          title: 'Ocean Blue Prime',
+          description: 'Complete branding for a premium steakhouse.'
+        }
+        // You can add more branding projects here
+      ],
+      'mobile': [
+        {
+          id: 'threadbox',
+          title: 'Threadbox',
+          description: 'Weather-based outfit generator app.'
+        }
+      ],
+      'promotional': [
+        {
+          id: 'NBPA',
+          title: 'NBPA Events',
+          description: 'Promotional materials for NBPA events.'
+        }
+      ],
+      'social': [
+        {
+          id: 'posters',
+          title: 'Pop Culture Art',
+          description: 'Social media posts for pop culture communities.'
+        }
+      ],
+      'sports': [
+        {
+          id: 'sports',
+          title: 'Athlete Celebrations',
+          description: 'Graphics celebrating athlete accomplishments.'
+        }
+      ],
+      'ads': [
+        {
+          id: 'ads',
+          title: 'Product Advertisements',
+          description: 'Mock advertisements for various products.'
+        }
+      ],
+      'logos': [
+        {
+          id: 'logos',
+          title: 'Local Businesses',
+          description: 'Logo designs for local businesses.'
+        }
+      ]
+    };
+
+    const categoryTitles = {
+      'branding': 'Branding & Marketing',
+      'mobile': 'Mobile App UI',
+      'promotional': 'Marketing & Promotional',
+      'social': 'Social Media Posts',
+      'sports': 'Sports Media Graphics',
+      'ads': 'Product Advertising',
+      'logos': 'Logo Work'
+    };
+
+    const projects = categoryProjects[categoryId] || [];
+
+    return (
+      <div className="p-8 md:p-12 text-center max-w-4xl mx-auto">
+        <button
+          onClick={() => setSelectedCategory(null)}
+          className="flex items-center space-x-2 text-gray-400 hover:text-white mb-6 transition-colors duration-200"
+        >
+          <ArrowLeft size={16} />
+          <span>Back to Categories</span>
+        </button>
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-10">{categoryTitles[categoryId]}</h2>
+        <p className="text-lg text-gray-300 mb-8 leading-relaxed">
           Click on a project to view its case study!
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {designProjects.map(project => (
+          {projects.map(project => (
             <div 
               key={project.id}
               onClick={() => navigateToCaseStudy(project.id)}
@@ -246,6 +358,15 @@ export default function App() {
           '/images/MARCJACOBS.png',
           '/images/ROLEX.png'
         ]
+      },
+      'logos': {
+        title: 'Logo Designs: Local Businesses',
+        content: 'This project consisted of creating logos that embodied the brand identity of local businesses. The key challenge was to create designs that resonate with the target audience and effectively communicate the brand\'s message.',
+        images: [
+          '/images/GUARANA.png',
+          '/images/MARCJACOBS.png',
+          '/images/ROLEX.png'
+        ]
       }
     };
 
@@ -255,11 +376,16 @@ export default function App() {
     return (
       <div className="p-8 md:p-12 text-left max-w-4xl mx-auto">
         <button
-          onClick={() => setDesignCaseStudy(null)}
+          onClick={() => {
+            setDesignCaseStudy(null);
+            if (!selectedCategory) {
+              // If no category is selected, we came from old navigation, so do nothing special
+            }
+          }}
           className="flex items-center space-x-2 text-gray-400 hover:text-white mb-6 transition-colors duration-200"
         >
           <ArrowLeft size={16} />
-          <span>Back to Design Portfolio</span>
+          <span>Back to Projects</span>
         </button>
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">{currentCaseStudy.title}</h2>
         <p className="text-lg text-gray-300 leading-relaxed mb-8">
@@ -360,6 +486,9 @@ export default function App() {
       case 'design':
         if (designCaseStudy) {
           return <CaseStudyPage caseStudyId={designCaseStudy} />;
+        }
+        if (selectedCategory) {
+          return <CategoryProjectsPage categoryId={selectedCategory} />;
         }
         return <DesignPage />;
       case 'development':
