@@ -145,41 +145,35 @@ export default function App() {
         description: 'Complete branding for a premium steakhouse.'
       },
       {
-        id: 'AGT',
-        title: 'A&G Transportation',
-        description: 'Branding and marketing for a transportation company.'
-      },
-      {
         id: 'NCC',
         title: 'North Corner Consulting',
         description: 'Professional branding for a consulting firm.'
       },
       {
-        id: 'EFC',
-        title: 'Elite Fitness Center',
-        description: 'Complete brand identity for a modern fitness center.'
+        id: 'NBPA',
+        title: 'NBPA Events',
+        description: 'Promotional materials for NBPA events.'
       },
       {
-        id: 'UC',
-        title: 'Urban Café',
-        description: 'Branding and visual identity for an urban café.'
+        id: 'AGT',
+        title: 'A&G Transportation',
+        description: 'Branding and marketing for a transportation company.'
       },
       {
-        id: 'TSG',
-        title: 'Tech Solutions Group',
-        description: 'Corporate branding for a technology solutions company.'
+        id: 'WE',
+        title: 'Wine Enthusiast',
+        description: 'Dynamic brand identity for Wine Enthusiast.'
+      },
+      {
+        id: 'KBH',
+        title: 'Klean Bee Housekeeping',
+        description: 'Dynamic brand identity for Klean Bee Housekeeping.'
       },
       // Mobile App UI
       {
         id: 'threadbox',
         title: 'Threadbox',
         description: 'Weather-based outfit generator app.'
-      },
-      // Promotional
-      {
-        id: 'NBPA',
-        title: 'NBPA Events',
-        description: 'Promotional materials for NBPA events.'
       },
       // Social Media
       {
