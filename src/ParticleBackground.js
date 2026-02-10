@@ -9,11 +9,6 @@ export default function ParticleBackground() {
     <Particles
       id="tsparticles"
       options={{
-        background: {
-          color: {
-            value: '#0a192f', // Your dark blue background
-          },
-        },
         fpsLimit: 60,
         interactivity: {
           events: {
@@ -73,7 +68,7 @@ export default function ParticleBackground() {
         },
         detectRetina: true,
       }}
-      style={{ position: 'absolute', inset: 0, zIndex: 0 }}
+      style={{ position: 'fixed', inset: 0, zIndex: 1 }}
     />
   );
 }
