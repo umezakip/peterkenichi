@@ -39,16 +39,7 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Utility function to navigate to a design category.
-  const navigateToCategory = (categoryId) => {
-    setSelectedCategory(categoryId);
-    setDesignCaseStudy(null);
-  };
-
-  // Utility function to navigate to a specific design case study.
-  const navigateToCaseStudy = (caseStudyId) => {
-    setDesignCaseStudy(caseStudyId);
-  };
+  // ...existing code...
 
   // State to manage the active link in the navigation bar.
   const [activeLink, setActiveLink] = useState('home');
