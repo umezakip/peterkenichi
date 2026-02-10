@@ -138,62 +138,58 @@ export default function App() {
   const DesignPage = () => {
     // All projects from all categories, flattened into a single array.
     const allProjects = [
-      // Branding & Marketing
+      // 1. Ocean Blue Prime
       {
         id: 'OBP',
         title: 'Ocean Blue Prime',
         description: 'Complete branding for a premium steakhouse.'
       },
-      {
-        id: 'AGT',
-        title: 'A&G Transportation',
-        description: 'Branding and marketing for a transportation company.'
-      },
+      // 2. North Corner Consulting
       {
         id: 'NCC',
         title: 'North Corner Consulting',
         description: 'Professional branding for a consulting firm.'
       },
-      {
-        id: 'EFC',
-        title: 'Elite Fitness Center',
-        description: 'Complete brand identity for a modern fitness center.'
-      },
-      {
-        id: 'UC',
-        title: 'Urban Café',
-        description: 'Branding and visual identity for an urban café.'
-      },
-      {
-        id: 'TSG',
-        title: 'Tech Solutions Group',
-        description: 'Corporate branding for a technology solutions company.'
-      },
-      // Mobile App UI
-      {
-        id: 'threadbox',
-        title: 'Threadbox',
-        description: 'Weather-based outfit generator app.'
-      },
-      // Promotional
+      // 3. NBPA
       {
         id: 'NBPA',
         title: 'NBPA Events',
         description: 'Promotional materials for NBPA events.'
       },
-      // Social Media
+      // 4. A&G Transportation
+      {
+        id: 'AGT',
+        title: 'A&G Transportation',
+        description: 'Branding and marketing for a transportation company.'
+      },
+      // 5. Wine Enthusiast
+      {
+        id: 'WE',
+        title: 'Wine Enthusiast',
+        description: 'Dynamic brand identity for Wine Enthusiast.'
+      },
+      // 6. Klean Bee Housekeeping
+      {
+        id: 'KBH',
+        title: 'Klean Bee Housekeeping',
+        description: 'Dynamic brand identity for Klean Bee Housekeeping.'
+      },
+      // 7. The rest
+      {
+        id: 'threadbox',
+        title: 'Threadbox',
+        description: 'Weather-based outfit generator app.'
+      },
       {
         id: 'posters',
         title: 'Pop Culture Art',
         description: 'Social media posts for pop culture communities.'
       },
-      // Sports
       {
         id: 'sports',
         title: 'Athlete Celebrations',
         description: 'Graphics celebrating athlete accomplishments.'
       },
-      // Ads
       {
         id: 'ads',
         title: 'Product Advertisements',
@@ -238,13 +234,6 @@ export default function App() {
           '/images/OBP.jpg',
         ]
       },
-      'AGT': {
-        title: 'A&G Transportation',
-        content: 'Complete branding package for A&G Transportation, including logo design, vehicle wraps, and marketing materials. The design emphasizes reliability, professionalism, and efficiency in the transportation industry.',
-        images: [
-          '/images/ag.jpg',
-        ]
-      },
       'NCC': {
         title: 'North Corner Consulting',
         content: 'Professional branding for North Corner Consulting, a firm specializing in business strategy. The design conveys trust, expertise, and modern professionalism through clean typography and strategic color choices.',
@@ -254,6 +243,22 @@ export default function App() {
           '/images/BG3.jpg',
           '/images/BG4.jpg',
           '/images/BG5.jpg'
+        ]
+      },
+      'NBPA': {
+        title: 'National Basketball Players Association (NBPA)',
+        content: 'This project involved print and production for promotional items for an NBPA event. My approach was to use a limited color palette and bold typography to create a cohesive and usable look. Each item in the series was unique but maintained a consistent logo to build recognition for the organization.',
+        images: [
+          '/images/NBPA.jpg',
+          'https://placehold.co/800x600/ed64a6/ffffff?text=Poster+2',
+          'https://placehold.co/800x600/f6ad55/ffffff?text=Poster+3'
+        ]
+      },
+      'AGT': {
+        title: 'A&G Transportation',
+        content: 'Complete branding package for A&G Transportation, including logo design, vehicle wraps, and marketing materials. The design emphasizes reliability, professionalism, and efficiency in the transportation industry.',
+        images: [
+          '/images/ag.jpg',
         ]
       },
       'WE': {
@@ -268,23 +273,6 @@ export default function App() {
         content: 'Dynamic brand identity for Klean Bee Housekeeping, combining energy, strength, and motivation. The design system includes logo, signage, apparel, and promotional materials that inspire action and commitment.',
         images: [
           '/images/KB1.png',
-        ]
-      },
-      'NBPA': {
-        title: 'National Basketball Players Association (NBPA)',
-        content: 'This project involved print and production for promotional items for an NBPA event. My approach was to use a limited color palette and bold typography to create a cohesive and usable look. Each item in the series was unique but maintained a consistent logo to build recognition for the organization.',
-        images: [
-          '/images/NBPA.jpg',
-          'https://placehold.co/800x600/ed64a6/ffffff?text=Poster+2',
-          'https://placehold.co/800x600/f6ad55/ffffff?text=Poster+3'
-        ]
-      },
-      'WCC': {
-        title: 'Westchester Country Club',
-        content: 'Modern and innovative branding for Westchester Country Club, a prestigious private club offering exceptional amenities and services. The design emphasizes elegance, tradition, and exclusivity.',
-        images: [
-          'https://placehold.co/800x600/7c3aed/ffffff?text=TSG+Logo',
-          'https://placehold.co/800x600/7c3aed/ffffff?text=Brand+Guidelines'
         ]
       },
       'posters': {
