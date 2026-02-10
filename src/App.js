@@ -1,4 +1,4 @@
-import ParticleBackground from './ParticleBackground';
+import LavaLampBackground from './LavaLampBackground';
 // Import React hooks for state management and useEffect for side effects.
 import React, { useState, useEffect, useRef } from 'react';
 // Import icons from lucide-react for a clean, modern look.
@@ -421,8 +421,8 @@ export default function App() {
   return (
     // Main container with a dark background and text color.
     <div className="bg-gray-900 min-h-screen text-white font-sans flex flex-col items-center relative overflow-hidden">
-      {/* Particle background for all pages except Home */}
-      {currentPage !== 'home' && <ParticleBackground />}
+      {/* Lava lamp background for all pages except Home */}
+      {currentPage !== 'home' && <LavaLampBackground />}
       {/* Video Background for the Home Page */}
       {currentPage === 'home' && (
         <>
