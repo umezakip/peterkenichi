@@ -2,18 +2,12 @@
 // Example: theme.extend.colors: { accent: '#00CFFF' }
 
 import React from 'react';
-import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles';
+import { Particles } from '@tsparticles/react';
 
 export default function ParticleBackground() {
-  const particlesInit = async (main) => {
-    await loadFull(main);
-  };
-
   return (
     <Particles
       id="tsparticles"
-      init={particlesInit}
       options={{
         background: {
           color: {
