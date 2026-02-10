@@ -325,68 +325,59 @@ export default function App() {
   const CaseStudyPage = ({ caseStudyId }) => {
     const caseStudies = {
       'OBP': {
-        title: 'Branding & Marketing: Ocean Blue Prime',
+        title: 'Ocean Blue Prime',
         content: 'This case study outlines the design process for a premium steakhouse. The goal was to create a modern, scalable, and memorable mark. I began with competitor analysis and mood boarding, then moved on to functional designing using the client color palette selection. The final designs are sleek, and strong, all while maintaining a certain poise.',
         images: [
           '/images/OBP.jpg',
-          'https://placehold.co/800x600/38a169/ffffff?text=Sketches'
         ]
       },
       'AGT': {
-        title: 'Branding & Marketing: A&G Transportation',
+        title: 'A&G Transportation',
         content: 'Complete branding package for A&G Transportation, including logo design, vehicle wraps, and marketing materials. The design emphasizes reliability, professionalism, and efficiency in the transportation industry.',
         images: [
-          'https://placehold.co/800x600/2563eb/ffffff?text=A%26G+Logo',
-          'https://placehold.co/800x600/2563eb/ffffff?text=Vehicle+Design'
+          '/images/ag.jpg',
         ]
       },
       'NCC': {
-        title: 'Branding & Marketing: North Corner Consulting',
+        title: 'North Corner Consulting',
         content: 'Professional branding for North Corner Consulting, a firm specializing in business strategy. The design conveys trust, expertise, and modern professionalism through clean typography and strategic color choices.',
         images: [
-          'https://placehold.co/800x600/0891b2/ffffff?text=NCC+Logo',
-          'https://placehold.co/800x600/0891b2/ffffff?text=Business+Cards'
+          '/images/BG1.jpg',
+          '/images/BG2.jpg',
+          '/images/BG3.jpg',
+          '/images/BG4.jpg',
+          '/images/BG5.jpg'
         ]
       },
-      'EFC': {
-        title: 'Branding & Marketing: Elite Fitness Center',
-        content: 'Dynamic brand identity for Elite Fitness Center, combining energy, strength, and motivation. The design system includes logo, signage, apparel, and promotional materials that inspire action and commitment.',
+      'WE': {
+        title: 'Wine Enthusiast',
+        content: 'Dynamic brand identity for Wine Enthusiast, combining energy, strength, and motivation. The design system includes logo, signage, apparel, and promotional materials that inspire action and commitment.',
         images: [
-          'https://placehold.co/800x600/dc2626/ffffff?text=Elite+Fitness+Logo',
-          'https://placehold.co/800x600/dc2626/ffffff?text=Apparel+Design'
+          '/images/WEA.jpg',
         ]
       },
-      'UC': {
-        title: 'Branding & Marketing: Urban Café',
-        content: 'Warm and inviting brand identity for Urban Café, capturing the essence of community and quality coffee culture. The design includes menu design, packaging, and environmental graphics.',
+      'KBH': {
+        title: 'Klean Bee Housekeeping',
+        content: 'Dynamic brand identity for Klean Bee Housekeeping, combining energy, strength, and motivation. The design system includes logo, signage, apparel, and promotional materials that inspire action and commitment.',
         images: [
-          'https://placehold.co/800x600/92400e/ffffff?text=Urban+Cafe+Logo',
-          'https://placehold.co/800x600/92400e/ffffff?text=Menu+Design'
-        ]
-      },
-      'TSG': {
-        title: 'Branding & Marketing: Tech Solutions Group',
-        content: 'Modern and innovative branding for Tech Solutions Group, a company providing cutting-edge technology services. The design emphasizes innovation, reliability, and forward-thinking solutions.',
-        images: [
-          'https://placehold.co/800x600/7c3aed/ffffff?text=TSG+Logo',
-          'https://placehold.co/800x600/7c3aed/ffffff?text=Brand+Guidelines'
-        ]
-      },
-      'threadbox': {
-        title: 'UI Wireframe: Threadbox',
-        content: 'For this project, I designed the user interface for a weather based fashion app. The key challenge was to create an intuitive and visually appealing experience that makes it easy for users to receive output based off their input entry. I used Figma to create wireframes and high-fidelity mockups, focusing on clear navigation, and a consistent design system.',
-        images: [
-          '/images/threadbox.jpg',
-          'https://placehold.co/800x600/ecc94b/ffffff?text=App+UI+Mockup+2'
+          '/images/KB1.png',
         ]
       },
       'NBPA': {
-        title: 'Promotional Events: NBPA',
+        title: 'National Basketball Players Association (NBPA)',
         content: 'This project involved print and production for promotional items for an NBPA event. My approach was to use a limited color palette and bold typography to create a cohesive and usable look. Each item in the series was unique but maintained a consistent logo to build recognition for the organization.',
         images: [
           '/images/NBPA.jpg',
           'https://placehold.co/800x600/ed64a6/ffffff?text=Poster+2',
           'https://placehold.co/800x600/f6ad55/ffffff?text=Poster+3'
+        ]
+      },
+      'WCC': {
+        title: 'Westchester Country Club',
+        content: 'Modern and innovative branding for Westchester Country Club, a prestigious private club offering exceptional amenities and services. The design emphasizes elegance, tradition, and exclusivity.',
+        images: [
+          'https://placehold.co/800x600/7c3aed/ffffff?text=TSG+Logo',
+          'https://placehold.co/800x600/7c3aed/ffffff?text=Brand+Guidelines'
         ]
       },
       'posters': {
@@ -399,7 +390,7 @@ export default function App() {
         ]
       },
       'sports': {
-        title: 'Media Graphics: Athletes',
+        title: 'Sports Social Media Graphics',
         content: 'Using Adobe Creative Suite I created celebratory media for accomplished athletes. Designs embodied the athlete and their specific tone and aura. This was primarily done using color theory, typography, and texture.',
         images: [
           '/images/RICHARDSON.png',
@@ -407,14 +398,22 @@ export default function App() {
         ]
       },
       'ads': {
-        title: 'Product Ads (mock): Guarana, Spider-man Movie, Rolex',
+        title: 'Product Ads: Guarana, Spider-man Movie, Rolex',
         content: 'This project consisted of creating ads elevated through creativity and relatability. The key challenge was to embody a lifestyle that a consumer relates to. This is visible through components such as the children plating soccer around the soda bottle, a core memory for Brasileros.',
         images: [
           '/images/GUARANA.png',
           '/images/MARCJACOBS.png',
           '/images/ROLEX.png'
         ]
-      }
+      },
+      'threadbox': {
+        title: 'UI Wireframe: Threadbox',
+        content: 'For this project, I designed the user interface for a weather based fashion app. The key challenge was to create an intuitive and visually appealing experience that makes it easy for users to receive output based off their input entry. I used Figma to create wireframes and high-fidelity mockups, focusing on clear navigation, and a consistent design system.',
+        images: [
+          '/images/threadbox.jpg',
+          'https://placehold.co/800x600/ecc94b/ffffff?text=App+UI+Mockup+2'
+        ]
+      },
     };
 
     const currentCaseStudy = caseStudies[caseStudyId];
