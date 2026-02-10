@@ -138,62 +138,66 @@ export default function App() {
   const DesignPage = () => {
     // All projects from all categories, flattened into a single array.
     const allProjects = [
-      // 1. Ocean Blue Prime
+      // Branding & Marketing
       {
         id: 'OBP',
         title: 'Ocean Blue Prime',
         description: 'Complete branding for a premium steakhouse.'
       },
-      // 2. North Corner Consulting
-      {
-        id: 'NCC',
-        title: 'North Corner Consulting',
-        description: 'Professional branding for a consulting firm.'
-      },
-      // 3. NBPA
-      {
-        id: 'NBPA',
-        title: 'NBPA Events',
-        description: 'Promotional materials for NBPA events.'
-      },
-      // 4. A&G Transportation
       {
         id: 'AGT',
         title: 'A&G Transportation',
         description: 'Branding and marketing for a transportation company.'
       },
-      // 5. Wine Enthusiast
       {
-        id: 'WE',
-        title: 'Wine Enthusiast',
-        description: 'Dynamic brand identity for Wine Enthusiast.'
+        id: 'NCC',
+        title: 'North Corner Consulting',
+        description: 'Professional branding for a consulting firm.'
       },
-      // 6. Klean Bee Housekeeping
       {
-        id: 'KBH',
-        title: 'Klean Bee Housekeeping',
-        description: 'Dynamic brand identity for Klean Bee Housekeeping.'
+        id: 'EFC',
+        title: 'Elite Fitness Center',
+        description: 'Complete brand identity for a modern fitness center.'
       },
-      // 7. The rest
+      {
+        id: 'UC',
+        title: 'Urban Café',
+        description: 'Branding and visual identity for an urban café.'
+      },
+      {
+        id: 'TSG',
+        title: 'Tech Solutions Group',
+        description: 'Corporate branding for a technology solutions company.'
+      },
+      // Mobile App UI
       {
         id: 'threadbox',
         title: 'Threadbox',
         description: 'Weather-based outfit generator app.'
       },
+      // Promotional
+      {
+        id: 'NBPA',
+        title: 'NBPA Events',
+        description: 'Promotional materials for NBPA events.'
+      },
+      // Social Media
       {
         id: 'posters',
         title: 'Pop Culture Art',
         description: 'Social media posts for pop culture communities.'
       },
+      // Sports
       {
         id: 'sports',
         title: 'Athlete Celebrations',
         description: 'Graphics celebrating athlete accomplishments.'
       },
+      // Ads
       {
         id: 'ads',
         title: 'Product Advertisements',
-        description: 'Mock advertisements for various products.'
+        description: 'Advertisements for various products.'
       }
     ];
 
@@ -234,6 +238,13 @@ export default function App() {
           '/images/OBP.jpg',
         ]
       },
+      'AGT': {
+        title: 'A&G Transportation',
+        content: 'Complete branding package for A&G Transportation, including logo design, vehicle wraps, and marketing materials. The design emphasizes reliability, professionalism, and efficiency in the transportation industry.',
+        images: [
+          '/images/ag.jpg',
+        ]
+      },
       'NCC': {
         title: 'North Corner Consulting',
         content: 'Professional branding for North Corner Consulting, a firm specializing in business strategy. The design conveys trust, expertise, and modern professionalism through clean typography and strategic color choices.',
@@ -243,22 +254,6 @@ export default function App() {
           '/images/BG3.jpg',
           '/images/BG4.jpg',
           '/images/BG5.jpg'
-        ]
-      },
-      'NBPA': {
-        title: 'National Basketball Players Association (NBPA)',
-        content: 'This project involved print and production for promotional items for an NBPA event. My approach was to use a limited color palette and bold typography to create a cohesive and usable look. Each item in the series was unique but maintained a consistent logo to build recognition for the organization.',
-        images: [
-          '/images/NBPA.jpg',
-          'https://placehold.co/800x600/ed64a6/ffffff?text=Poster+2',
-          'https://placehold.co/800x600/f6ad55/ffffff?text=Poster+3'
-        ]
-      },
-      'AGT': {
-        title: 'A&G Transportation',
-        content: 'Complete branding package for A&G Transportation, including logo design, vehicle wraps, and marketing materials. The design emphasizes reliability, professionalism, and efficiency in the transportation industry.',
-        images: [
-          '/images/ag.jpg',
         ]
       },
       'WE': {
@@ -273,6 +268,13 @@ export default function App() {
         content: 'Dynamic brand identity for Klean Bee Housekeeping, combining energy, strength, and motivation. The design system includes logo, signage, apparel, and promotional materials that inspire action and commitment.',
         images: [
           '/images/KB1.png',
+        ]
+      },
+      'NBPA': {
+        title: 'National Basketball Players Association (NBPA)',
+        content: 'This project involved print and production for promotional items for an NBPA event. My approach was to use a limited color palette and bold typography to create a cohesive and usable look. Each item in the series was unique but maintained a consistent logo to build recognition for the organization.',
+        images: [
+          '/images/NBPA.jpg',
         ]
       },
       'posters': {
@@ -306,14 +308,11 @@ export default function App() {
         content: 'For this project, I designed the user interface for a weather based fashion app. The key challenge was to create an intuitive and visually appealing experience that makes it easy for users to receive output based off their input entry. I used Figma to create wireframes and high-fidelity mockups, focusing on clear navigation, and a consistent design system.',
         images: [
           '/images/threadbox.jpg',
-          'https://placehold.co/800x600/ecc94b/ffffff?text=App+UI+Mockup+2'
         ]
       },
     };
 
     const currentCaseStudy = caseStudies[caseStudyId];
-    const shouldShowAllImages = ['posters', 'sports', 'ads'].includes(caseStudyId);
-    
     return (
       <div className="p-8 md:p-12 text-left max-w-4xl mx-auto">
         <button
@@ -332,32 +331,18 @@ export default function App() {
         <p className="text-lg text-gray-300 leading-relaxed mb-8">
           {currentCaseStudy.content}
         </p>
-        
         <div className="space-y-8">
-          {shouldShowAllImages ? (
-            currentCaseStudy.images.map((image, index) => (
-              <div key={index} className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-4 border border-gray-700 shadow-lg">
-                <img
-                  src={image}
-                  alt={`${currentCaseStudy.title} - Visual ${index + 1}`}
-                  className="w-full h-auto rounded-xl object-cover"
-                  onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/800x600?text=Image+Not+Found"; }}
-                />
+          {currentCaseStudy.images && currentCaseStudy.images.length > 0 && currentCaseStudy.images.map((image, index) => (
+            <div key={index} className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-4 border border-gray-700 shadow-lg">
+              <img
+                src={image}
+                alt={`${currentCaseStudy.title} - Visual ${index + 1}`}
+                className="w-full h-auto rounded-xl object-cover"
+                onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/800x600?text=Image+Not+Found"; }}
+              />
+            </div>
+          ))}
         </div>
-      ))
-          ) : (
-            currentCaseStudy.images.length > 0 && (
-              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-4 border border-gray-700 shadow-lg">
-                <img
-                  src={currentCaseStudy.images[0]}
-                  alt={`${currentCaseStudy.title} - Main Visual`}
-                  className="w-full h-auto rounded-xl object-cover"
-                  onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/800x600?text=Image+Not+Found"; }}
-                />
-      </div>
-    )
-  )}
-</div>
       </div>
     );
   };
