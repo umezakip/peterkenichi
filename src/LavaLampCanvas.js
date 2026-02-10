@@ -93,10 +93,15 @@ export default function LavaLampCanvas() {
     resize();
     window.addEventListener('resize', resize);
 
-    canvas.onmousemove = function(event) {
+    // Track mouse globally, but ignore when over buttons
+    function handleMouseMove(event) {
+      // If hovering a button, ignore
+      if (event.target.tagName === 'BUTTON' || event.target.closest('button')) return;
       mouseX = event.pageX;
       mouseY = event.pageY;
-    };
+    }
+    window.addEventListener('mousemove', handleMouseMove);
+
     canvas.ontouchmove = function(event) {
       mouseX = event.targetTouches[0].pageX;
       mouseY = event.targetTouches[0].pageY;
@@ -131,6 +136,7 @@ export default function LavaLampCanvas() {
     update();
     return () => {
       window.removeEventListener('resize', resize);
+      window.removeEventListener('mousemove', handleMouseMove);
       cancelAnimationFrame(animationId);
     };
   }, []);
