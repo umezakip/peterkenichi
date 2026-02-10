@@ -169,11 +169,11 @@ export default function App() {
         title: 'Klean Bee Housekeeping',
         description: 'Dynamic brand identity for Klean Bee Housekeeping.'
       },
-      // Mobile App UI
+      // Ads
       {
-        id: 'threadbox',
-        title: 'Threadbox',
-        description: 'Weather-based outfit generator app.'
+        id: 'ads',
+        title: 'Product Advertisements',
+        description: 'Advertisements for various products.'
       },
       // Social Media
       {
@@ -187,11 +187,11 @@ export default function App() {
         title: 'Athlete Celebrations',
         description: 'Graphics celebrating athlete accomplishments.'
       },
-      // Ads
+      // Mobile App UI (last)
       {
-        id: 'ads',
-        title: 'Product Advertisements',
-        description: 'Advertisements for various products.'
+        id: 'threadbox',
+        title: 'Threadbox',
+        description: 'Weather-based outfit generator app.'
       }
     ];
 
