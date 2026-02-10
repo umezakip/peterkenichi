@@ -143,43 +143,70 @@ export default function App() {
   };
 
   // New "Design" page component - shows design categories.
+  // New "Design" page component - shows all projects directly.
   const DesignPage = () => {
-    // Design categories data.
-    const designCategories = [
+    // All projects from all categories, flattened into a single array.
+    const allProjects = [
+      // Branding & Marketing
       {
-        id: 'branding',
-        title: 'Branding & Marketing',
-        description: 'Complete branding and marketing designs for businesses.'
+        id: 'OBP',
+        title: 'Ocean Blue Prime',
+        description: 'Complete branding for a premium steakhouse.'
       },
       {
-        id: 'mobile',
-        title: 'Mobile App UI',
-        description: 'Mobile app wireframes and user interface designs.'
+        id: 'AGT',
+        title: 'A&G Transportation',
+        description: 'Branding and marketing for a transportation company.'
       },
       {
-        id: 'promotional',
-        title: 'Marketing & Promotional',
-        description: 'Promotional items for events and organizations.'
+        id: 'NCC',
+        title: 'North Corner Consulting',
+        description: 'Professional branding for a consulting firm.'
       },
       {
-        id: 'social',
-        title: 'Social Media Posts',
-        description: 'Social media posts for pop culture accounts and communities.'
+        id: 'EFC',
+        title: 'Elite Fitness Center',
+        description: 'Complete brand identity for a modern fitness center.'
       },
+      {
+        id: 'UC',
+        title: 'Urban Café',
+        description: 'Branding and visual identity for an urban café.'
+      },
+      {
+        id: 'TSG',
+        title: 'Tech Solutions Group',
+        description: 'Corporate branding for a technology solutions company.'
+      },
+      // Mobile App UI
+      {
+        id: 'threadbox',
+        title: 'Threadbox',
+        description: 'Weather-based outfit generator app.'
+      },
+      // Promotional
+      {
+        id: 'NBPA',
+        title: 'NBPA Events',
+        description: 'Promotional materials for NBPA events.'
+      },
+      // Social Media
+      {
+        id: 'posters',
+        title: 'Pop Culture Art',
+        description: 'Social media posts for pop culture communities.'
+      },
+      // Sports
       {
         id: 'sports',
-        title: 'Sports Media Graphics',
-        description: 'Graphics celebrating athletes and their accomplishments.'
+        title: 'Athlete Celebrations',
+        description: 'Graphics celebrating athlete accomplishments.'
       },
+      // Ads
       {
         id: 'ads',
-        title: 'Product Advertising',
-        description: 'Mock advertisements showcasing creativity and relatability.'
-      },
-      {
-        id: 'logos',
-        title: 'Logo Work',
-        description: 'Logo designs showcasing creativity and brand identity.'
+        title: 'Product Advertisements',
+        description: 'Mock advertisements for various products.'
       }
     ];
 
@@ -190,126 +217,13 @@ export default function App() {
           Proficient in Figma, Adobe: Photoshop, Illustrator, InDesign, Premier Pro
         </p>
         <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-          Click on a category to explore projects!
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {designCategories.map(category => (
-            <div 
-              key={category.id}
-              onClick={() => navigateToCategory(category.id)}
-              className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-6 border border-gray-700 shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:bg-gray-800 cursor-pointer"
-            >
-              <h3 className="text-xl font-bold mb-2 text-white">{category.title}</h3>
-              <p className="text-gray-400 text-sm md:text-base mb-4">{category.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  };
-
-  // Component to show projects within a selected category.
-  const CategoryProjectsPage = ({ categoryId }) => {
-    // Projects organized by category.
-    const categoryProjects = {
-      'branding': [
-        {
-          id: 'OBP',
-          title: 'Ocean Blue Prime',
-          description: 'Complete branding for a premium steakhouse.'
-        },
-        {
-          id: 'AGT',
-          title: 'A&G Transportation',
-          description: 'Branding and marketing for a transportation company.'
-        },
-        {
-          id: 'NCC',
-          title: 'North Corner Consulting',
-          description: 'Professional branding for a consulting firm.'
-        },
-        {
-          id: 'EFC',
-          title: 'Elite Fitness Center',
-          description: 'Complete brand identity for a modern fitness center.'
-        },
-        {
-          id: 'UC',
-          title: 'Urban Café',
-          description: 'Branding and visual identity for an urban café.'
-        },
-        {
-          id: 'TSG',
-          title: 'Tech Solutions Group',
-          description: 'Corporate branding for a technology solutions company.'
-        }
-      ],
-      'mobile': [
-        {
-          id: 'threadbox',
-          title: 'Threadbox',
-          description: 'Weather-based outfit generator app.'
-        }
-      ],
-      'promotional': [
-        {
-          id: 'NBPA',
-          title: 'NBPA Events',
-          description: 'Promotional materials for NBPA events.'
-        }
-      ],
-      'social': [
-        {
-          id: 'posters',
-          title: 'Pop Culture Art',
-          description: 'Social media posts for pop culture communities.'
-        }
-      ],
-      'sports': [
-        {
-          id: 'sports',
-          title: 'Athlete Celebrations',
-          description: 'Graphics celebrating athlete accomplishments.'
-        }
-      ],
-      'ads': [
-        {
-          id: 'ads',
-          title: 'Product Advertisements',
-          description: 'Mock advertisements for various products.'
-        }
-      ]
-    };
-
-    const categoryTitles = {
-      'branding': 'Branding & Marketing',
-      'mobile': 'Mobile App UI',
-      'promotional': 'Marketing & Promotional',
-      'social': 'Social Media Posts',
-      'sports': 'Sports Media Graphics',
-      'ads': 'Product Advertising'
-    };
-
-    const projects = categoryProjects[categoryId] || [];
-
-    return (
-      <div className="p-8 md:p-12 text-center max-w-4xl mx-auto">
-        <button
-          onClick={() => setSelectedCategory(null)}
-          className="flex items-center space-x-2 text-gray-400 hover:text-white mb-6 transition-colors duration-200"
-        >
-          <ArrowLeft size={16} />
-          <span>Back to Categories</span>
-        </button>
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-10">{categoryTitles[categoryId]}</h2>
-        <p className="text-lg text-gray-300 mb-8 leading-relaxed">
           Click on a project to view its case study!
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map(project => (
-            <div 
+          {allProjects.map(project => (
+            <div
               key={project.id}
-              onClick={() => navigateToCaseStudy(project.id)}
+              onClick={() => setDesignCaseStudy(project.id)}
               className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-6 border border-gray-700 shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:bg-gray-800 cursor-pointer"
             >
               <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>
@@ -320,6 +234,8 @@ export default function App() {
       </div>
     );
   };
+
+  // CategoryProjectsPage removed. Projects are now shown directly in DesignPage.
 
   // Component for displaying a single case study.
   const CaseStudyPage = ({ caseStudyId }) => {
@@ -532,9 +448,6 @@ export default function App() {
       case 'design':
         if (designCaseStudy) {
           return <CaseStudyPage caseStudyId={designCaseStudy} />;
-        }
-        if (selectedCategory) {
-          return <CategoryProjectsPage categoryId={selectedCategory} />;
         }
         return <DesignPage />;
       case 'development':
