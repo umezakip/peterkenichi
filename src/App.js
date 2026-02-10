@@ -210,7 +210,7 @@ export default function App() {
             <div
               key={project.id}
               onClick={() => setDesignCaseStudy(project.id)}
-              className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-6 border border-gray-700 shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:bg-gray-800 cursor-pointer"
+              className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-6 border border-[#00CFFF] shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:bg-[#00CFFF]/10 cursor-pointer"
             >
               <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>
               <p className="text-gray-400 text-sm md:text-base mb-4">{project.description}</p>
