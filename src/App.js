@@ -88,7 +88,7 @@ export default function App() {
       <div className="mx-auto max-w-4xl bg-gray-900/40 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl border border-[#00CFFF]/30">
         <h1 className="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight text-white">
           Hello!<br />
-          <span className="block mt-2">I'm Peter Umezaki</span>
+          <span className="block mt-2">I'm <span className="text-[#00CFFF]">Peter Umezaki</span></span>
         </h1>
         <p className="mt-4 md:mt-6 text-xl md:text-2xl font-light text-gray-300">
           Multimedia Designer with Web Design skills. I design quality content that attracts and engages any and all audiences.
