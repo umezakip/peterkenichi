@@ -217,8 +217,32 @@ export default function App() {
           id: 'OBP',
           title: 'Ocean Blue Prime',
           description: 'Complete branding for a premium steakhouse.'
+        },
+        {
+          id: 'AGT',
+          title: 'A&G Transportation',
+          description: 'Branding and marketing for a transportation company.'
+        },
+        {
+          id: 'NCC',
+          title: 'North Corner Consulting',
+          description: 'Professional branding for a consulting firm.'
+        },
+        {
+          id: 'EFC',
+          title: 'Elite Fitness Center',
+          description: 'Complete brand identity for a modern fitness center.'
+        },
+        {
+          id: 'UC',
+          title: 'Urban Café',
+          description: 'Branding and visual identity for an urban café.'
+        },
+        {
+          id: 'TSG',
+          title: 'Tech Solutions Group',
+          description: 'Corporate branding for a technology solutions company.'
         }
-        // You can add more branding projects here
       ],
       'mobile': [
         {
@@ -254,13 +278,6 @@ export default function App() {
           title: 'Product Advertisements',
           description: 'Mock advertisements for various products.'
         }
-      ],
-      'logos': [
-        {
-          id: 'logos',
-          title: 'Local Businesses',
-          description: 'Logo designs for local businesses.'
-        }
       ]
     };
 
@@ -270,8 +287,7 @@ export default function App() {
       'promotional': 'Marketing & Promotional',
       'social': 'Social Media Posts',
       'sports': 'Sports Media Graphics',
-      'ads': 'Product Advertising',
-      'logos': 'Logo Work'
+      'ads': 'Product Advertising'
     };
 
     const projects = categoryProjects[categoryId] || [];
@@ -316,6 +332,46 @@ export default function App() {
           'https://placehold.co/800x600/38a169/ffffff?text=Sketches'
         ]
       },
+      'AGT': {
+        title: 'Branding & Marketing: A&G Transportation',
+        content: 'Complete branding package for A&G Transportation, including logo design, vehicle wraps, and marketing materials. The design emphasizes reliability, professionalism, and efficiency in the transportation industry.',
+        images: [
+          'https://placehold.co/800x600/2563eb/ffffff?text=A%26G+Logo',
+          'https://placehold.co/800x600/2563eb/ffffff?text=Vehicle+Design'
+        ]
+      },
+      'NCC': {
+        title: 'Branding & Marketing: North Corner Consulting',
+        content: 'Professional branding for North Corner Consulting, a firm specializing in business strategy. The design conveys trust, expertise, and modern professionalism through clean typography and strategic color choices.',
+        images: [
+          'https://placehold.co/800x600/0891b2/ffffff?text=NCC+Logo',
+          'https://placehold.co/800x600/0891b2/ffffff?text=Business+Cards'
+        ]
+      },
+      'EFC': {
+        title: 'Branding & Marketing: Elite Fitness Center',
+        content: 'Dynamic brand identity for Elite Fitness Center, combining energy, strength, and motivation. The design system includes logo, signage, apparel, and promotional materials that inspire action and commitment.',
+        images: [
+          'https://placehold.co/800x600/dc2626/ffffff?text=Elite+Fitness+Logo',
+          'https://placehold.co/800x600/dc2626/ffffff?text=Apparel+Design'
+        ]
+      },
+      'UC': {
+        title: 'Branding & Marketing: Urban Café',
+        content: 'Warm and inviting brand identity for Urban Café, capturing the essence of community and quality coffee culture. The design includes menu design, packaging, and environmental graphics.',
+        images: [
+          'https://placehold.co/800x600/92400e/ffffff?text=Urban+Cafe+Logo',
+          'https://placehold.co/800x600/92400e/ffffff?text=Menu+Design'
+        ]
+      },
+      'TSG': {
+        title: 'Branding & Marketing: Tech Solutions Group',
+        content: 'Modern and innovative branding for Tech Solutions Group, a company providing cutting-edge technology services. The design emphasizes innovation, reliability, and forward-thinking solutions.',
+        images: [
+          'https://placehold.co/800x600/7c3aed/ffffff?text=TSG+Logo',
+          'https://placehold.co/800x600/7c3aed/ffffff?text=Brand+Guidelines'
+        ]
+      },
       'threadbox': {
         title: 'UI Wireframe: Threadbox',
         content: 'For this project, I designed the user interface for a weather based fashion app. The key challenge was to create an intuitive and visually appealing experience that makes it easy for users to receive output based off their input entry. I used Figma to create wireframes and high-fidelity mockups, focusing on clear navigation, and a consistent design system.',
@@ -353,15 +409,6 @@ export default function App() {
       'ads': {
         title: 'Product Ads (mock): Guarana, Spider-man Movie, Rolex',
         content: 'This project consisted of creating ads elevated through creativity and relatability. The key challenge was to embody a lifestyle that a consumer relates to. This is visible through components such as the children plating soccer around the soda bottle, a core memory for Brasileros.',
-        images: [
-          '/images/GUARANA.png',
-          '/images/MARCJACOBS.png',
-          '/images/ROLEX.png'
-        ]
-      },
-      'logos': {
-        title: 'Logo Designs: Local Businesses',
-        content: 'This project consisted of creating logos that embodied the brand identity of local businesses. The key challenge was to create designs that resonate with the target audience and effectively communicate the brand\'s message.',
         images: [
           '/images/GUARANA.png',
           '/images/MARCJACOBS.png',
