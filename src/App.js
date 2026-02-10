@@ -84,13 +84,13 @@ export default function App() {
   // Helper component for the "About Me" page content.
   const HomePage = () => (
     <div className="text-center p-8 md:p-12 relative z-20">
-      <div className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
-        <h1 className="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight">
+      <div>
+        <h1 className="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight text-white">
           Hello, I'm Peter Umezaki
         </h1>
       </div>
       <p className="mt-4 md:mt-6 text-xl md:text-2xl font-light text-gray-300 max-w-2xl mx-auto">
-        Front-End Developer & Full Stack Designer. I build beautiful and functional web applications with a passion for clean code and intuitive design.
+        Multimedia Designer with Web Design skills. I design quality content that attracts and engages any and all audiences.
       </p>
       <div className="mt-8 md:mt-12 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
         <button
@@ -115,18 +115,18 @@ export default function App() {
       <div className="p-8 md:p-12 text-center max-w-4xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">About Me</h2>
         <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-          Peter Umezaki is a quadralingual and passionate front-end developer with expertise in building dynamic and responsive user interfaces. With a strong foundation in HTML, CSS, and JavaScript, I specialize in crafting modern web applications using the React library. I am dedicated to writing clean, maintainable code and solving complex problems to deliver exceptional user experiences.
+          Peter Umezaki is a quadralingual multimedia designer with expertise in designing dynamic graphics that relate to consumers, and responsive user interfaces. With a strong foundation in Adobe Creative Suite, Figma, and other design platforms as well as fundamental knowledge in HTML, CSS, and JavaScript, I am dedicated to creating visually stunning and user-friendly designs. I have a proven track record of delivering high-quality work that meets client needs and exceeds expectations. My passion for design is evident in my attention to detail, creativity, and commitment to excellence.
           <br/><br/>
-          Additionally, I have a proficient background in Graphic Design (6+ years), focused on Branding & Marketing. I am excited to bring my skills to a new team and design/build something amazing.
+          I have a proficient background in Graphic Design (6+ years), focused on Branding & Marketing. I am excited to bring my skills to a new team and design/build something amazing.
         </p>
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mt-8">
           <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm rounded-full p-4 border border-gray-700">
             <Rocket size={24} className="text-purple-400" />
-            <span className="text-gray-300 text-sm">Passionate about building intuitive UI/UX</span>
+            <span className="text-gray-300 text-sm">Passionate about creating meaningful visual experiences</span>
           </div>
           <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm rounded-full p-4 border border-gray-700">
             <Award size={24} className="text-yellow-400" />
-            <span className="text-gray-300 text-sm">Committed to clean and efficient code</span>
+            <span className="text-gray-300 text-sm">Committed to excellence and innovative creativity</span>
           </div>
         </div>
       </div>
@@ -199,7 +199,7 @@ export default function App() {
       <div className="p-8 md:p-12 text-center max-w-4xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-10">Graphic Design</h2>
         <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-          Proficient in Figma, Adobe: Photoshop, Illustrator, InDesign, Premier Pro
+          Proficient in Figma, Adobe: Photoshop, Illustrator, InDesign, Premier Pro, After Effects, and more.
         </p>
         <p className="text-lg text-gray-300 mb-8 leading-relaxed">
           Click on a project to view its case study!
