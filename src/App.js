@@ -401,8 +401,8 @@ export default function App() {
         <div className="container mx-auto flex justify-center space-x-2 md:space-x-4">
           <NavLink to="home">Home</NavLink>
           <NavLink to="about">About Me</NavLink>
-          <NavLink to="development">Development</NavLink>
           <NavLink to="design">Design</NavLink>
+          <NavLink to="development">Development</NavLink>
           <NavLink to="contact">Contact</NavLink>
         </div>
       </nav>
