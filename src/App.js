@@ -84,28 +84,28 @@ export default function App() {
 
   // Helper component for the "About Me" page content.
   const HomePage = () => (
-    <div className="text-center p-8 md:p-12 relative z-20">
-      <div>
+    <div className="text-center p-8 md:p-12 relative z-20 flex items-center justify-center min-h-[60vh]">
+      <div className="mx-auto max-w-2xl bg-gray-900/70 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl border border-[#00CFFF]/30">
         <h1 className="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight text-white">
           Hello, I'm Peter Umezaki
         </h1>
-      </div>
-      <p className="mt-4 md:mt-6 text-xl md:text-2xl font-light text-gray-300 max-w-2xl mx-auto">
-        Multimedia Designer with Web Design skills. I design quality content that attracts and engages any and all audiences.
-      </p>
-      <div className="mt-8 md:mt-12 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-        <button
-          onClick={() => navigate('development')}
-          className="px-8 py-3 bg-[#00CFFF] text-gray-900 font-bold text-lg rounded-full shadow-lg hover:shadow-xl hover:bg-[#00CFFF]/80 transition-all duration-300 transform hover:-translate-y-1"
-        >
-          My Work
-        </button>
-        <button
-          onClick={() => navigate('contact')}
-          className="px-8 py-3 bg-transparent text-white font-bold text-lg border-2 border-[#00CFFF] rounded-full hover:bg-[#00CFFF] hover:text-gray-900 transition-colors duration-300"
-        >
-          Get In Touch
-        </button>
+        <p className="mt-4 md:mt-6 text-xl md:text-2xl font-light text-gray-300">
+          Multimedia Designer with Web Design skills. I design quality content that attracts and engages any and all audiences.
+        </p>
+        <div className="mt-8 md:mt-12 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+          <button
+            onClick={() => navigate('design')}
+            className="px-8 py-3 bg-[#00CFFF] text-gray-900 font-bold text-lg rounded-full shadow-lg hover:shadow-xl hover:bg-[#00CFFF]/80 transition-all duration-300 transform hover:-translate-y-1"
+          >
+            My Work
+          </button>
+          <button
+            onClick={() => navigate('contact')}
+            className="px-8 py-3 bg-transparent text-white font-bold text-lg border-2 border-[#00CFFF] rounded-full hover:bg-[#00CFFF] hover:text-gray-900 transition-colors duration-300"
+          >
+            Get In Touch
+          </button>
+        </div>
       </div>
     </div>
   );
