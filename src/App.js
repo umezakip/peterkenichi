@@ -1,3 +1,4 @@
+import ParticleBackground from './ParticleBackground';
 // Import React hooks for state management and useEffect for side effects.
 import React, { useState, useEffect, useRef } from 'react';
 // Import icons from lucide-react for a clean, modern look.
@@ -56,8 +57,8 @@ export default function App() {
       className={`
         px-4 py-2 text-sm md:text-lg font-medium rounded-full transition-colors duration-300
         ${activeLink === to 
-          ? 'bg-white text-gray-900 shadow-md transform scale-105' 
-          : 'text-gray-200 hover:bg-gray-700/50'
+          ? 'bg-[#00CFFF] text-gray-900 shadow-md transform scale-105' 
+          : 'text-gray-200 hover:bg-[#00CFFF]/20 hover:text-[#00CFFF]'
         }
       `}
     >
@@ -67,14 +68,14 @@ export default function App() {
 
   // Helper component to render a single project card.
   const ProjectCard = ({ title, description, link }) => (
-    <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-6 border border-gray-700 shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:bg-gray-800">
+    <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-6 border border-[#00CFFF] shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:bg-[#00CFFF]/10">
       <h3 className="text-xl font-bold mb-2 text-white">{title}</h3>
       <p className="text-gray-400 text-sm md:text-base mb-4">{description}</p>
       <a 
         href={link} 
         target="_blank" 
         rel="noopener noreferrer"
-        className="inline-block px-5 py-2 text-sm font-semibold text-gray-900 bg-white rounded-full hover:bg-gray-200 transition-colors duration-300"
+        className="inline-block px-5 py-2 text-sm font-semibold text-gray-900 bg-[#00CFFF] rounded-full hover:bg-[#00CFFF]/80 transition-colors duration-300"
       >
         View Project
       </a>
@@ -95,13 +96,13 @@ export default function App() {
       <div className="mt-8 md:mt-12 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
         <button
           onClick={() => navigate('development')}
-          className="px-8 py-3 bg-white text-gray-900 font-bold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+          className="px-8 py-3 bg-[#00CFFF] text-gray-900 font-bold text-lg rounded-full shadow-lg hover:shadow-xl hover:bg-[#00CFFF]/80 transition-all duration-300 transform hover:-translate-y-1"
         >
           My Work
         </button>
         <button
           onClick={() => navigate('contact')}
-          className="px-8 py-3 bg-transparent text-white font-bold text-lg border-2 border-white rounded-full hover:bg-white hover:text-gray-900 transition-colors duration-300"
+          className="px-8 py-3 bg-transparent text-white font-bold text-lg border-2 border-[#00CFFF] rounded-full hover:bg-[#00CFFF] hover:text-gray-900 transition-colors duration-300"
         >
           Get In Touch
         </button>
@@ -120,12 +121,12 @@ export default function App() {
           I have a proficient background in Graphic Design (6+ years), focused on Branding & Marketing. I am excited to bring my skills to a new team and design/build something amazing.
         </p>
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mt-8">
-          <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm rounded-full p-4 border border-gray-700">
-            <Rocket size={24} className="text-purple-400" />
+          <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm rounded-full p-4 border border-[#00CFFF]">
+            <Rocket size={24} className="text-[#00CFFF]" />
             <span className="text-gray-300 text-sm">Passionate about creating meaningful visual experiences</span>
           </div>
-          <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm rounded-full p-4 border border-gray-700">
-            <Award size={24} className="text-yellow-400" />
+          <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm rounded-full p-4 border border-[#00CFFF]">
+            <Award size={24} className="text-[#FFD700]" />
             <span className="text-gray-300 text-sm">Committed to excellence and innovative creativity</span>
           </div>
         </div>
@@ -420,7 +421,8 @@ export default function App() {
   return (
     // Main container with a dark background and text color.
     <div className="bg-gray-900 min-h-screen text-white font-sans flex flex-col items-center relative overflow-hidden">
-      
+      {/* Particle background for all pages except Home */}
+      {currentPage !== 'home' && <ParticleBackground />}
       {/* Video Background for the Home Page */}
       {currentPage === 'home' && (
         <>
