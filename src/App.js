@@ -85,7 +85,7 @@ export default function App() {
   // Helper component for the "About Me" page content.
   const HomePage = () => (
     <div className="text-center p-8 md:p-12 relative z-20 flex items-center justify-center min-h-[60vh]">
-      <div className="mx-auto max-w-4xl bg-gray-900/40 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl border border-[#00CFFF]/30">
+      <div className="mx-auto max-w-4xl">
         <h1 className="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight text-white">
           Hello!<br />
           <span className="block mt-2">I'm <span className="text-[#00CFFF]">Peter Umezaki</span></span>
@@ -421,28 +421,10 @@ export default function App() {
   return (
     // Main container with a dark background and text color.
     <div className="bg-gray-900 min-h-screen text-white font-sans flex flex-col items-center relative overflow-hidden">
-      {/* Lava lamp canvas for all pages except Home */}
-      {currentPage !== 'home' && <LavaLampCanvas />}
-      {/* Video Background for the Home Page */}
-      {currentPage === 'home' && (
-        <>
-          <video
-            ref={videoRef}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000"
-            style={{ opacity: 1 }}
-          >
-            {/* Replace this URL with your own video URL. */}
-            <source src="/images/backgroundvid.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          {/* Semi-transparent overlay to ensure text readability */}
-          <div className="absolute inset-0 bg-gray-900/60 z-10"></div>
-        </>
-      )}
+      {/* Lava lamp canvas as background for all pages */}
+      <LavaLampCanvas />
+      {/* Semi-transparent overlay to ensure text readability on all pages */}
+      <div className="absolute inset-0 bg-gray-900/60 z-10"></div>
 
       {/* Navigation bar at the top */}
       <nav className="fixed top-0 left-0 w-full z-50 p-4 bg-gray-900/50 backdrop-blur-lg shadow-lg">
