@@ -419,15 +419,15 @@ export default function App() {
   };
 
   return (
-    // Main container with a dark background and text color.
-    <div className="bg-gray-900 min-h-screen text-white font-sans flex flex-col items-center relative overflow-hidden">
+    // Main container with a pure black background and text color.
+    <div className="bg-black min-h-screen text-white font-sans flex flex-col items-center relative overflow-hidden">
       {/* Lava lamp canvas as background for all pages */}
       <LavaLampCanvas />
       {/* Semi-transparent overlay to ensure text readability on all pages */}
-      <div className="absolute inset-0 bg-gray-900/60 z-10"></div>
+      <div className="absolute inset-0 bg-black/60 z-10"></div>
 
       {/* Navigation bar at the top */}
-      <nav className="fixed top-0 left-0 w-full z-50 p-4 bg-gray-900/50 backdrop-blur-lg shadow-lg">
+      <nav className="fixed top-0 left-0 w-full z-50 p-4 bg-black/70 backdrop-blur-lg shadow-lg">
         <div className="container mx-auto flex justify-center space-x-2 md:space-x-4">
           <NavLink to="home">Home</NavLink>
           <NavLink to="about">About Me</NavLink>
